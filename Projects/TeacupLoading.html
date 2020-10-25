@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body, div {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    #app {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .Loading {
+      display: flex;
+      justify-content: center;
+      width: 22rem;
+      height: 22rem;
+      border: 1rem solid rgb(30, 29, 20);
+      border-radius: 0 0 6rem 6rem;
+      border-top-width: 0;
+      font-size: 5rem;
+      line-height: 14rem;
+      font-weight: bold;
+      color: rgb(30, 29, 20);
+      background-color: #fff3da;
+      overflow: hidden;
+      box-shadow: 0 0.25rem 0.25rem 0.1rem rgba(0, 0, 0, 0.2);
+      transform: translateZ(0);
+      animation: coloring 3s ease-in-out infinite alternate;
+    }
+    .Loading::before, .Loading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      right: -25rem;
+      height: 10rem;
+      clip-path: polygon(
+        0% 20%,
+        2% 18%,
+        3% 16%,
+        5% 14%,
+        7% 13%,
+        8% 11%,
+        10% 10%,
+        12% 10%,
+        13% 10%,
+        15% 10%,
+        17% 11%,
+        18% 13%,
+        20% 14%,
+        22% 16%,
+        23% 18%,
+        25% 20%,
+        27% 22%,
+        28% 24%,
+        30% 26%,
+        32% 27%,
+        33% 29%,
+        35% 30%,
+        37% 30%,
+        38% 30%,
+        40% 30%,
+        43% 29%,
+        45% 26%,
+        47% 24%,
+        48% 22%,
+        50% 20%,
+        52% 18%,
+        53% 16%,
+        55% 14%,
+        57% 13%,
+        58% 11%,
+        60% 10%,
+        62% 10%,
+        63% 10%,
+        65% 10%,
+        67% 11%,
+        68% 13%,
+        70% 14%,
+        72% 16%,
+        73% 18%,
+        75% 20%,
+        77% 22%,
+        78% 26%,
+        80% 27%,
+        82% 29%,
+        83% 30%,
+        85% 30%,
+        87% 30%,
+        88% 30%,
+        90% 29%,
+        92% 27%,
+        93% 26%,
+        95% 24%,
+        97% 22%,
+        98% 20%,
+        100% 18%,
+        100% 100%,
+        0% 100%
+      );
+    }
+    .Loading::before {
+      background-color: rgb(255,214,125);
+      animation: move1 infinite 2s linear;
+    }
+    .Loading::after {
+      background-color: rgb(255,174,0);
+      animation: move2 infinite 6s linear;
+    }
+    @keyframes move1 {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-23rem);
+      }
+    }
+    @keyframes move2 {
+      0% {
+        transform: translateX(0rem);
+      }
+      100% {
+        transform: translateX(-23rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="Loading">
+      20%
+    </div>
+  </div>
+</body>
+</html>

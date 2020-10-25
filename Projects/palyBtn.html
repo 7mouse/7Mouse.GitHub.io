@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body, div {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    #app {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .playBtn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 22rem;
+      height: 22rem;
+      border-radius: 100%;
+      background-image: linear-gradient(45deg, #5298ff, #ff00a8);
+      box-shadow: 0 1rem 2rem 1rem rgba(0,0,0,0.2);
+    }
+    .playBtn::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-25%,-50%);
+      width: 0;
+      height: 0;
+      border: 8rem solid transparent;
+      border-left-color: white;
+      border-top-width: 5rem;
+      border-bottom-width: 5rem;
+      filter: drop-shadow(0 0.2rem 0.1rem rgba(0,0,0,0.2));
+      transition: all 0.2s ease;
+      will-change: border-width, height, left;
+    }
+    .playBtn::after {
+      content: '';
+      position: absolute;
+      right: 5rem;
+      top: 50%;
+      width: 0;
+      height: 10rem;
+      border: 0.5rem solid transparent;
+      border-width: 0 0 0 1.5rem;
+      border-left-color: white;
+      filter: drop-shadow(0 2rem 1rem rgba(0,0,0,0.2));
+      opacity: 0;
+      transform: scale(0) translateY(-50%);
+      transition: all 0.2s ease;
+    }
+    .playBtn:hover::before {
+      border-width: 0 0 0 1.5rem;
+      height: 10rem;
+      left: 35%;
+    }
+    .playBtn:hover::after {
+      opacity: 1;
+      transform: scale(1) translate(-100%,-50%);
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="playBtn">
+    </div>
+  </div>
+</body>
+</html>

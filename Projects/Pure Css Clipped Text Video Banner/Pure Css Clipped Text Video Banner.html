@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>透明文字</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #111;
+    }
+    .container {
+      position: absolute;
+      top: 75px;
+      left: 75px;
+      right: 75px;
+      bottom: 75px;
+      background-color: #fff;
+      overflow: hidden;
+    }
+    .container:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #009688, #ff68f2);
+      pointer-events: none;
+      mix-blend-mode: color;
+      /* 前景着色 */
+    }
+    .container .textBox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #fff;
+      font-size: 100px;
+      text-transform: uppercase;
+      font-weight: 800;
+      mix-blend-mode: screen;
+      color: #000;
+      /* 混合模式 黑色不造成颜色影响, 所以最后所有颜色都为背景色 */
+
+    }
+    .container .textBox span {
+      font-size: 1.2em;
+    }
+    .container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="蕾姆水.jpeg" alt="">
+    <div class="textBox">
+      蕾姆 <span>我爱了</span>
+    </div>
+  </div>
+</body>
+</html>

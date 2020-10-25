@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body, div {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    #app {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .circleLoading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20rem;
+      height: 20rem;
+      border: 1rem solid transparent;
+      border-radius: 100%;
+      font-size: 5rem;
+      font-weight: bold;
+      color: purple;
+      box-shadow: 0  0.25rem 1rem rgba(0,0,0,0.2),
+          inset 0 0.25rem 0.25rem 0.25rem rgba(0,0,0,0.2)
+    }
+    .circleLoading::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      /* transform: translate(50%, 50%); */
+      margin-left: -11rem;
+      margin-right: -11rem;
+      display: block;
+      border: 1rem solid transparent;
+      border-top-color: purple;
+      border-radius: 100%;
+      width: 20rem;
+      height: 20rem;
+      animation: rotate infinite 2s ease-in-out;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="circleLoading">
+      20%
+    </div>
+  </div>
+</body>
+</html>

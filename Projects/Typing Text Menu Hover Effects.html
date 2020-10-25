@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Text Menu Hover Effects</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: consolas;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #1c234a;
+    }
+    ul {
+      position: relative;
+    }
+    ul li{
+      list-style: none;
+      margin: 0 20px;
+      font-size: 4em;
+    }
+    ul li span {
+      position: relative;
+      top: -2px;
+      left: -10px;
+      color: transparent;
+    }
+    ul li:hover span {
+      color: #ef0048;
+      transition: .5s;
+    }
+    ul li a {
+      position: relative;
+      color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    ul li a:before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      color: #1bfaad;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    ul:hover li a::before {
+      animation: animate 0.5s steps(11) forwards;
+      /* 获取最长元素的 字符个数 */
+    }
+    @keyframes animate {
+      0% {
+        width: 387.06px;
+        /* 获取最长元素的宽 */
+      }
+      100% {
+        width: 0px;
+      }
+    }
+    
+    ul li:hover a::before {
+      animation: animateTwo 1s steps(11) forwards;
+      /* 获取最长元素的 字符个数 */
+    }
+    @keyframes animateTwo {
+      0% {
+        width: 0px;
+        /* 获取最长元素的宽 */
+      }
+      100% {
+        width: 387.06px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><span>&times;</span><a href="#" data-text="Home">Home</a></li>
+    <li><span>&times;</span><a href="#" data-text="About">About</a></li>
+    <li><span>&times;</span><a href="#" data-text="Services">Services</a></li>
+    <li><span>&times;</span><a href="#" data-text="Typing Menu">Typing Menu</a></li>
+    <li><span>&times;</span><a href="#" data-text="Our Team">Our Team</a></li>
+    <li><span>&times;</span><a href="#" data-text="Contact Us">Contact Us</a></li>
+  </ul>
+</body>
+</html>
