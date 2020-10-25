@@ -62,13 +62,24 @@
     <div class="game">
         <ul>
             <h2>游戏列表</h2>
-            <li><a href="./game/1/piano.html" target="game_window" >钢琴</a></li>
-            <li><a href="./game/2/mofang.html" target="game_window" >魔方</a></li>
+            <li class="game-item"><a href="./game/1/piano.html">钢琴</a></li>
+            <li class="game-item"><a href="./game/2/mofang.html">魔方</a></li>
         </ul>
-        <iframe name="game_window" frameborder="0">
-
-        </iframe>
+        <iframe id="game_window" frameborder="0"></iframe>
     </div>
     <script src="./scripts/script.js"></script>
+    <script>
+        function iframeClick() {
+            let li = document.getElementsByClassName('game-item');
+            let iframe = document.getElementById('game_window');
+            li[0].onclick = function() {
+                iframe.src = this.firstElementChild.getAttribute('href');
+            }
+            li[1].onclick = function() {
+                iframe.src = this.firstElementChild.getAttribute('href');
+            }
+        }
+        addLoadEvent(iframeClick);
+    </script>
 </body>
 </html>
